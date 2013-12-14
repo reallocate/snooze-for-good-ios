@@ -7,15 +7,45 @@
 //
 
 #import "AppDelegate.h"
+#import "ECSlidingViewController.h"
+#import "SlidingViewController.h"
 
-@implementation AppDelegate
+@implementation AppDelegate {
+    //ECSlidingViewController *_slidingViewController;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+
+    
+    UIViewController *topViewController = [self.mainStoryboard instantiateViewControllerWithIdentifier:@"Alarm"];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:topViewController];
+    navigationController.navigationBarHidden = YES;
+
+    _slidingViewController = [SlidingViewController slidingWithTopViewController:navigationController];
+
+    _slidingViewController.underLeftViewController = [self.mainStoryboard instantiateViewControllerWithIdentifier:@"Side Menu"];
+
+
+    // configure anchored layout
+    _slidingViewController.anchorRightRevealAmount = 150.0;
+
+
+    // enable swiping on the top view
+    [navigationController.view addGestureRecognizer:_slidingViewController.panGesture];
+
+    self.window.rootViewController = _slidingViewController;
+
+    [self.window makeKeyAndVisible];
     return YES;
+
 }
-							
+
++ (AppDelegate*) get {
+    return (AppDelegate *) [[UIApplication sharedApplication] delegate];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -41,6 +71,10 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (UIStoryboard*) mainStoryboard {
+    return [UIStoryboard storyboardWithName:@"Main" bundle:nil];;
 }
 
 @end
