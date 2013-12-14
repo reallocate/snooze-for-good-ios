@@ -6,11 +6,17 @@
 
 #import "SlidingViewController.h"
 #import "AppDelegate.h"
+#import "UserManager.h"
+#import "SigninViewController.h"
 
 
 @implementation SlidingViewController {
 
 }
+
+
+#pragma mark navigation helpers
+
 - (void)toAlarmView {
     [self setViewController:[[[AppDelegate get] mainStoryboard] instantiateViewControllerWithIdentifier:@"Alarm"]];
 }

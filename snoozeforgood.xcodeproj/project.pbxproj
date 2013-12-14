@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		37AE43D5896CD7223E1974B5 /* SlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AE479A6DC4967E412B0C2F /* SlidingViewController.m */; };
+		37AE4452E65CC2A8971D8323 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AE437EE79B197FE4E63E0C /* UserManager.m */; };
+		37AE49ECA1E4258C7FD1466A /* ObjCSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AE41F186F6B9FA31DFDB3D /* ObjCSingleton.m */; };
+		37AE4DBB7D232C92911E514E /* SigninViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AE4C422AE6FCB08798D66A /* SigninViewController.m */; };
 		8A2DCA3C185C5F6E00746730 /* AlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2DCA32185C5F6E00746730 /* AlarmViewController.m */; };
 		8A2DCA3D185C5F6E00746730 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2DCA34185C5F6E00746730 /* AppDelegate.m */; };
 		8A2DCA3E185C5F6E00746730 /* SettingsViewControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2DCA36185C5F6E00746730 /* SettingsViewControllers.m */; };
@@ -43,8 +46,14 @@
 
 /* Begin PBXFileReference section */
 		16606FD3C2644F87858BB6CD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		37AE41F186F6B9FA31DFDB3D /* ObjCSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjCSingleton.m; sourceTree = "<group>"; };
+		37AE437EE79B197FE4E63E0C /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		37AE479A6DC4967E412B0C2F /* SlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlidingViewController.m; sourceTree = "<group>"; };
+		37AE49E7E512B5824B4626A8 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
+		37AE4BF68F1027D5C15A154E /* SigninViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SigninViewController.h; sourceTree = "<group>"; };
+		37AE4C422AE6FCB08798D66A /* SigninViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SigninViewController.m; sourceTree = "<group>"; };
 		37AE4E157171C131960EE1C2 /* SlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlidingViewController.h; sourceTree = "<group>"; };
+		37AE4EF671FFD4376555C054 /* ObjCSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjCSingleton.h; sourceTree = "<group>"; };
 		8A2DCA31185C5F6E00746730 /* AlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmViewController.h; sourceTree = "<group>"; };
 		8A2DCA32185C5F6E00746730 /* AlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmViewController.m; sourceTree = "<group>"; };
 		8A2DCA33185C5F6E00746730 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -116,6 +125,12 @@
 				8A2DCA3A185C5F6E00746730 /* ViewController.m */,
 				37AE479A6DC4967E412B0C2F /* SlidingViewController.m */,
 				37AE4E157171C131960EE1C2 /* SlidingViewController.h */,
+				37AE437EE79B197FE4E63E0C /* UserManager.m */,
+				37AE49E7E512B5824B4626A8 /* UserManager.h */,
+				37AE4EF671FFD4376555C054 /* ObjCSingleton.h */,
+				37AE41F186F6B9FA31DFDB3D /* ObjCSingleton.m */,
+				37AE4C422AE6FCB08798D66A /* SigninViewController.m */,
+				37AE4BF68F1027D5C15A154E /* SigninViewController.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -353,6 +368,9 @@
 				8A2DCA3D185C5F6E00746730 /* AppDelegate.m in Sources */,
 				8A2DCA3E185C5F6E00746730 /* SettingsViewControllers.m in Sources */,
 				37AE43D5896CD7223E1974B5 /* SlidingViewController.m in Sources */,
+				37AE4452E65CC2A8971D8323 /* UserManager.m in Sources */,
+				37AE49ECA1E4258C7FD1466A /* ObjCSingleton.m in Sources */,
+				37AE4DBB7D232C92911E514E /* SigninViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

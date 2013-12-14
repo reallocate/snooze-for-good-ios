@@ -5,10 +5,7 @@
 
 
 #import <Foundation/Foundation.h>
-#import "ECSlidingViewController.h"
 
 
-@interface SlidingViewController : ECSlidingViewController
-- (void)toAlarmView;
-- (void)toSettingsView;
+@interface SigninViewController : UIViewController
 @end

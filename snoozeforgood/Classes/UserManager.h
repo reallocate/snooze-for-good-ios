@@ -5,10 +5,9 @@
 
 
 #import <Foundation/Foundation.h>
-#import "ECSlidingViewController.h"
+#import "ObjCSingleton.h"
 
 
-@interface SlidingViewController : ECSlidingViewController
-- (void)toAlarmView;
-- (void)toSettingsView;
+@interface UserManager : ObjCSingleton
+@property(nonatomic, readonly) BOOL isLoggedIn;
 @end
