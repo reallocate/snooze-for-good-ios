@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37AE4540D211A16F5E21D7B0 /* SettingsViewControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AE4EAE3B6B7C09FE12DD8B /* SettingsViewControllers.m */; };
+		37AE46573A0496D453CDE3CF /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AE41CC211A875EE8640801 /* SideMenuViewController.m */; };
+		37AE4F76CB4F569565666DF2 /* AlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AE4A343693B1D5F17FCA90 /* AlarmViewController.m */; };
 		8A986507185C542900446A01 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A986506185C542900446A01 /* Foundation.framework */; };
 		8A986509185C542900446A01 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A986508185C542900446A01 /* CoreGraphics.framework */; };
 		8A98650B185C542A00446A01 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A98650A185C542A00446A01 /* UIKit.framework */; };
@@ -21,6 +24,7 @@
 		8A986528185C542A00446A01 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A98650A185C542A00446A01 /* UIKit.framework */; };
 		8A986530185C542A00446A01 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A98652E185C542A00446A01 /* InfoPlist.strings */; };
 		8A986532185C542A00446A01 /* snoozeforgoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A986531185C542A00446A01 /* snoozeforgoodTests.m */; };
+		F313CE16D2C348418692B4E7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16606FD3C2644F87858BB6CD /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16606FD3C2644F87858BB6CD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		37AE41CC211A875EE8640801 /* SideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuViewController.m; sourceTree = "<group>"; };
+		37AE4343AE258A22D6775292 /* AlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmViewController.h; sourceTree = "<group>"; };
+		37AE4954846D6A060BACD9F2 /* SettingsViewControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewControllers.h; sourceTree = "<group>"; };
+		37AE4A343693B1D5F17FCA90 /* AlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmViewController.m; sourceTree = "<group>"; };
+		37AE4EAE3B6B7C09FE12DD8B /* SettingsViewControllers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewControllers.m; sourceTree = "<group>"; };
+		37AE4F136BC1FE05E34D247B /* SideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuViewController.h; sourceTree = "<group>"; };
 		8A986503185C542900446A01 /* snoozeforgood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snoozeforgood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A986506185C542900446A01 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8A986508185C542900446A01 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +64,7 @@
 		8A98652D185C542A00446A01 /* snoozeforgoodTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "snoozeforgoodTests-Info.plist"; sourceTree = "<group>"; };
 		8A98652F185C542A00446A01 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8A986531185C542A00446A01 /* snoozeforgoodTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = snoozeforgoodTests.m; sourceTree = "<group>"; };
+		96901938C96649A795AD687E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +75,7 @@
 				8A986509185C542900446A01 /* CoreGraphics.framework in Frameworks */,
 				8A98650B185C542A00446A01 /* UIKit.framework in Frameworks */,
 				8A986507185C542900446A01 /* Foundation.framework in Frameworks */,
+				F313CE16D2C348418692B4E7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +99,7 @@
 				8A98652B185C542A00446A01 /* snoozeforgoodTests */,
 				8A986505185C542900446A01 /* Frameworks */,
 				8A986504185C542900446A01 /* Products */,
+				96901938C96649A795AD687E /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +119,7 @@
 				8A986508185C542900446A01 /* CoreGraphics.framework */,
 				8A98650A185C542A00446A01 /* UIKit.framework */,
 				8A986525185C542A00446A01 /* XCTest.framework */,
+				16606FD3C2644F87858BB6CD /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -119,6 +134,12 @@
 				8A98651C185C542A00446A01 /* ViewController.m */,
 				8A98651E185C542A00446A01 /* Images.xcassets */,
 				8A98650D185C542A00446A01 /* Supporting Files */,
+				37AE4A343693B1D5F17FCA90 /* AlarmViewController.m */,
+				37AE4343AE258A22D6775292 /* AlarmViewController.h */,
+				37AE41CC211A875EE8640801 /* SideMenuViewController.m */,
+				37AE4F136BC1FE05E34D247B /* SideMenuViewController.h */,
+				37AE4EAE3B6B7C09FE12DD8B /* SettingsViewControllers.m */,
+				37AE4954846D6A060BACD9F2 /* SettingsViewControllers.h */,
 			);
 			path = snoozeforgood;
 			sourceTree = "<group>";
@@ -159,9 +180,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A986535185C542A00446A01 /* Build configuration list for PBXNativeTarget "snoozeforgood" */;
 			buildPhases = (
+				48C5FCC8F3C04BDD95FA9FBA /* Check Pods Manifest.lock */,
 				8A9864FF185C542900446A01 /* Sources */,
 				8A986500185C542900446A01 /* Frameworks */,
 				8A986501185C542900446A01 /* Resources */,
+				AA52ACFD026645A7A5C63383 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -200,7 +223,7 @@
 				ORGANIZATIONNAME = reallocate;
 				TargetAttributes = {
 					8A986523185C542A00446A01 = {
-						TestTargetID = 8A986502185C542900446A01;
+						TestTargetID = 8A986502185C542900446A01 /* snoozeforgood */;
 					};
 				};
 			};
@@ -215,6 +238,8 @@
 			mainGroup = 8A9864FA185C542900446A01;
 			productRefGroup = 8A986504185C542900446A01 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+			);
 			projectRoot = "";
 			targets = (
 				8A986502185C542900446A01 /* snoozeforgood */,
@@ -244,6 +269,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		48C5FCC8F3C04BDD95FA9FBA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AA52ACFD026645A7A5C63383 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8A9864FF185C542900446A01 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -252,6 +310,9 @@
 				8A98651D185C542A00446A01 /* ViewController.m in Sources */,
 				8A986517185C542A00446A01 /* AppDelegate.m in Sources */,
 				8A986513185C542A00446A01 /* main.m in Sources */,
+				37AE4F76CB4F569565666DF2 /* AlarmViewController.m in Sources */,
+				37AE46573A0496D453CDE3CF /* SideMenuViewController.m in Sources */,
+				37AE4540D211A16F5E21D7B0 /* SettingsViewControllers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +436,7 @@
 		};
 		8A986536185C542A00446A01 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96901938C96649A795AD687E /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -388,6 +450,7 @@
 		};
 		8A986537185C542A00446A01 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96901938C96649A795AD687E /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

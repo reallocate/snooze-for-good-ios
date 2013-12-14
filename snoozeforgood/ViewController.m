@@ -18,6 +18,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Alarm"];
+    self.leftSideViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Side Menu"];
 }
 
 - (void)didReceiveMemoryWarning

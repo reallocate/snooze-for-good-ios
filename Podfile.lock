@@ -1,1 +1,10 @@
+PODS:
+  - SCSlidingViewController (1.1.0)
+
+DEPENDENCIES:
+  - SCSlidingViewController
+
+SPEC CHECKSUMS:
+  SCSlidingViewController: 522fbd17307b2face183fa1366a893f8625a4b3e
+
 COCOAPODS: 0.28.0

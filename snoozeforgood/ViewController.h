@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SCSlidingViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : SCSlidingViewController
 
 @end
