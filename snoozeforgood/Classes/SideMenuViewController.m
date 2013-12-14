@@ -7,6 +7,7 @@
 #import "SideMenuViewController.h"
 #import "AppDelegate.h"
 #import "SlidingViewController.h"
+#import "UserManager.h"
 
 
 @interface SideMenuViewController ()
@@ -25,6 +26,14 @@
 - (IBAction)settingsButtonPushed:(id)sender {
     [[AppDelegate get].slidingViewController toSettingsView];
 }
+
+
+- (IBAction)signoutButtonPushed:(id)sender {
+    [[UserManager sharedInstance] signout];
+    [[AppDelegate get].slidingViewController toSigninView];
+}
+
+
 
 
 @end

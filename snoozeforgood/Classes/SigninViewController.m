@@ -20,7 +20,6 @@
     [self dismiss];
 }
 
-
 - (void)dismiss {
     self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;   // your choice here from UIModalTransitionStyle
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];

@@ -45,8 +45,7 @@
 
 
     if ( ![[UserManager sharedInstance] isLoggedIn]) {
-        SigninViewController *signinViewController = [[AppDelegate get].mainStoryboard instantiateViewControllerWithIdentifier:@"Signin"];
-        [_slidingViewController presentViewController:signinViewController animated:NO completion:nil];
+        [_slidingViewController toSigninView];
     }
 
 

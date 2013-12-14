@@ -32,4 +32,12 @@
         [(UINavigationController *) self.topViewController setViewControllers:@[viewController] animated:NO];
     }];
 }
+
+- (void) toSigninView {
+    [self resetTopViewAnimated:YES onComplete:nil];
+    SigninViewController *signinViewController = [[AppDelegate get].mainStoryboard instantiateViewControllerWithIdentifier:@"Signin"];
+    [self presentViewController:signinViewController animated:NO completion:nil];
+}
+
+
 @end

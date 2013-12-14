@@ -11,4 +11,6 @@
 @interface SlidingViewController : ECSlidingViewController
 - (void)toAlarmView;
 - (void)toSettingsView;
+
+- (void)toSigninView;
 @end

@@ -31,6 +31,7 @@
 		8A986528185C542A00446A01 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A98650A185C542A00446A01 /* UIKit.framework */; };
 		8A986530185C542A00446A01 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A98652E185C542A00446A01 /* InfoPlist.strings */; };
 		8A986532185C542A00446A01 /* snoozeforgoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A986531185C542A00446A01 /* snoozeforgoodTests.m */; };
+		8AC171ED185D08AF00F6DCC8 /* logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AC171EC185D08AF00F6DCC8 /* logout@2x.png */; };
 		F313CE16D2C348418692B4E7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16606FD3C2644F87858BB6CD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		8A98652D185C542A00446A01 /* snoozeforgoodTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "snoozeforgoodTests-Info.plist"; sourceTree = "<group>"; };
 		8A98652F185C542A00446A01 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8A986531185C542A00446A01 /* snoozeforgoodTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = snoozeforgoodTests.m; sourceTree = "<group>"; };
+		8AC171EC185D08AF00F6DCC8 /* logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout@2x.png"; sourceTree = "<group>"; };
 		96901938C96649A795AD687E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +148,7 @@
 		8A2DCA41185C610200746730 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8AC171EC185D08AF00F6DCC8 /* logout@2x.png */,
 				8A2DCA48185C618000746730 /* menu@2x.png */,
 				8A2DCA42185C610200746730 /* alarm@2x.png */,
 				8A2DCA44185C610200746730 /* settings@2x.png */,
@@ -305,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A98651F185C542A00446A01 /* Images.xcassets in Resources */,
+				8AC171ED185D08AF00F6DCC8 /* logout@2x.png in Resources */,
 				8A2DCA49185C618000746730 /* menu@2x.png in Resources */,
 				8A2DCA47185C610200746730 /* settings@2x.png in Resources */,
 				8A986511185C542A00446A01 /* InfoPlist.strings in Resources */,
