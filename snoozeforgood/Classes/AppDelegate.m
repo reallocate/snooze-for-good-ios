@@ -60,7 +60,7 @@
 
 
     if (![[UserManager sharedInstance] isLoggedIn]) {
-        [_slidingViewController toSigninView];
+        [_slidingViewController toSignupView];
     }
 
 
@@ -102,6 +102,8 @@
     // if the app is going away, we close the session object; this is a good idea because
     // things may be hanging off the session, that need releasing (completion block, etc.) and
     // other components in the app may be awaiting close notification in order to do cleanup
+
+    UserManager *userManager = [UserManager sharedInstance];
     [FBSession.activeSession close];
 }
 
@@ -146,7 +148,7 @@
                           completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
                               // Forward any errors to the FBLoginView delegate.
                               if (error) {
-                                  [[UserManager sharedInstance] loginView:nil handleError:error];
+                                  [[UserManager sharedInstance] handleError:error];
                               }
                           }];
 }

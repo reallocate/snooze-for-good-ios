@@ -30,7 +30,7 @@
 
 - (IBAction)signoutButtonPushed:(id)sender {
     [[UserManager sharedInstance] signout];
-    [[AppDelegate get].slidingViewController toSigninView];
+    [[AppDelegate get].slidingViewController toSignupView];
 }
 
 

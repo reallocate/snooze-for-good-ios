@@ -14,7 +14,6 @@
 
 
 @implementation UserManager {
-
 }
 - (BOOL)isLoggedIn {
     return NO;
@@ -25,16 +24,37 @@
 }
 
 
-#pragma mark - FBLoginView delegate
+- (void)openFaceBookSession {
+    if (FBSession.activeSession.isOpen) {
+        // if a user logs out explicitly, we delete any cached token information, and next
+        // time they run the applicaiton they will be presented with log in UX again; most
+        // users will simply close the app or switch away, without logging out; this will
+        // cause the implicit cached-token login to occur on next launch of the application
+        [FBSession.activeSession closeAndClearTokenInformation];
 
-- (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
-    // if you become logged in, no longer flag to skip log in
-    [[UserManager sharedInstance] setIsLoggedIn:YES];
-    [[AppDelegate get].slidingViewController dismissSigninView];
+    } else {
+        if (FBSession.activeSession.state != FBSessionStateCreated) {
+            // Create a new, logged out session.
+            [FBSession setActiveSession:[[FBSession alloc] init]];
+        }
+
+        // if the session isn't open, let's open it now and present the login UX to the user
+        [FBSession.activeSession openWithCompletionHandler:^(FBSession *session,
+                FBSessionState status,
+                NSError *error) {
+            if (error) {
+                [self handleError:error];
+                [self signout];
+                [[AppDelegate get].slidingViewController toSignupView];
+            } else {
+                [self setIsLoggedIn:YES];
+                [[AppDelegate get].slidingViewController dismissSignupView];
+            }
+        }];
+    }
 }
 
-- (void)loginView:(FBLoginView *)loginView
-      handleError:(NSError *)error{
+- (void)handleError:(NSError *)error {
     NSString *alertMessage, *alertTitle;
 
     // Facebook SDK * error handling *
@@ -75,20 +95,5 @@
                           otherButtonTitles:nil] show];
     }
 }
-
-- (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
-    // Facebook SDK * login flow *
-    // It is important to always handle session closure because it can happen
-    // externally; for example, if the current session's access token becomes
-    // invalid. For this sample, we simply pop back to the landing page.
-    [self logOut];
-}
-
-- (void)logOut {
-    [self signout];
-    [[AppDelegate get].slidingViewController toSigninView];
-}
-
-
 
 @end

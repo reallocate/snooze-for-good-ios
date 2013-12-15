@@ -9,8 +9,12 @@
 #import "FBLoginView.h"
 
 
-@interface UserManager : ObjCSingleton<FBLoginViewDelegate>
+@interface UserManager : ObjCSingleton
 @property(nonatomic) BOOL isLoggedIn;
 
 - (void)signout;
+
+- (void)openFaceBookSession;
+
+- (void)handleError:(NSError *)error;
 @end

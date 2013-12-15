@@ -13,7 +13,7 @@
 - (void)toAlarmView;
 - (void)toSettingsView;
 
-- (void)toSigninView;
+- (void)toSignupView;
 
-- (void)dismissSigninView;
+- (void)dismissSignupView;
 @end

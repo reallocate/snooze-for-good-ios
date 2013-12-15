@@ -8,11 +8,11 @@
 #import "AppDelegate.h"
 #import "UserManager.h"
 #import "SigninViewController.h"
+#import "SignupViewController.h"
 
 
 @implementation SlidingViewController {
-
-    SigninViewController* _signinViewController;
+    SignupViewController* _signupViewController;
 }
 
 
@@ -34,15 +34,16 @@
     }];
 }
 
-- (void)toSigninView {
-    [self resetTopViewAnimated:NO onComplete:^{
-        _signinViewController = [[AppDelegate get].mainStoryboard instantiateViewControllerWithIdentifier:@"Signin"];
-        [self presentViewController:_signinViewController animated:NO completion:nil];
-    }];
+- (void)toSignupView {
+    [self resetTopViewAnimated:NO onComplete:nil];
+    _signupViewController = [[AppDelegate get].mainStoryboard instantiateViewControllerWithIdentifier:@"Signup"];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:_signupViewController];
+    navigationController.navigationBarHidden = YES;
+    [self presentViewController:navigationController animated:NO completion:nil];
 }
 
-- (void)dismissSigninView {
-    [_signinViewController dismiss];
-    _signinViewController = nil;
+- (void)dismissSignupView {
+    [[self presentedViewController] dismissViewControllerAnimated:NO completion:nil];
+    _signupViewController = nil;
 }
 @end
