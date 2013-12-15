@@ -9,25 +9,17 @@
 
 
 @implementation SigninViewController {
-    IBOutlet FBLoginView *_fbLoginView;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    _fbLoginView.delegate = [UserManager sharedInstance];
+- (IBAction)backButtonPushed:(id)sender {
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 
-- (IBAction)emailButtonPushed:(id)sender {
-    [self dismiss];
+- (IBAction)signinButtonPushed:(id)sender {
 }
 
-- (IBAction)regWithFBButtonPushed:(id)sender {
-    [FBSession openActiveSessionWithAllowLoginUI:YES];
-}
-
-- (void)dismiss {
-    self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;   // your choice here from UIModalTransitionStyle
-    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+- (IBAction)signinWithFacebookButtonPushed:(id)sender {
+    [[UserManager sharedInstance] openFaceBookSession];
 }
 
 @end

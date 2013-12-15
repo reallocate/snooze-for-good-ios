@@ -1,13 +1,23 @@
 PODS:
   - ECSlidingViewController (2.0.0-beta2)
   - Facebook-iOS-SDK (3.10.0)
+  - MHTextField (0.0.2.1):
+    - NSDate+Calendar
+  - NSDate+Calendar (0.0.2)
 
 DEPENDENCIES:
   - ECSlidingViewController
   - Facebook-iOS-SDK
+  - MHTextField (from `/Users/farmisen/dev/themelt/MHTextField/MHTextField.podspec`)
+
+EXTERNAL SOURCES:
+  MHTextField:
+    :path: /Users/farmisen/dev/themelt/MHTextField/MHTextField.podspec
 
 SPEC CHECKSUMS:
   ECSlidingViewController: 097e5451e8628611f17ed27a6e0829fa705f7851
   Facebook-iOS-SDK: ef402579aeb30cf0c4a6370fb0a927e3dc3059e5
+  MHTextField: 4cb96e33bccb58812c0ca0016a28574a7920167e
+  NSDate+Calendar: 3bc746ae54cbb5e576310a683897ef8248e5736f
 
-COCOAPODS: 0.27.1
+COCOAPODS: 0.28.0

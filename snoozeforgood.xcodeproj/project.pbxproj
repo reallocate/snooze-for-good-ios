@@ -17,9 +17,6 @@
 		8A2DCA3E185C5F6E00746730 /* SettingsViewControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2DCA36185C5F6E00746730 /* SettingsViewControllers.m */; };
 		8A2DCA3F185C5F6E00746730 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2DCA38185C5F6E00746730 /* SideMenuViewController.m */; };
 		8A2DCA40185C5F6E00746730 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2DCA3A185C5F6E00746730 /* ViewController.m */; };
-		8A2DCA45185C610200746730 /* alarm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2DCA42185C610200746730 /* alarm@2x.png */; };
-		8A2DCA47185C610200746730 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2DCA44185C610200746730 /* settings@2x.png */; };
-		8A2DCA49185C618000746730 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2DCA48185C618000746730 /* menu@2x.png */; };
 		8A986507185C542900446A01 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A986506185C542900446A01 /* Foundation.framework */; };
 		8A986509185C542900446A01 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A986508185C542900446A01 /* CoreGraphics.framework */; };
 		8A98650B185C542A00446A01 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A98650A185C542A00446A01 /* UIKit.framework */; };
@@ -32,7 +29,11 @@
 		8A986528185C542A00446A01 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A98650A185C542A00446A01 /* UIKit.framework */; };
 		8A986530185C542A00446A01 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A98652E185C542A00446A01 /* InfoPlist.strings */; };
 		8A986532185C542A00446A01 /* snoozeforgoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A986531185C542A00446A01 /* snoozeforgoodTests.m */; };
-		8AC171ED185D08AF00F6DCC8 /* logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AC171EC185D08AF00F6DCC8 /* logout@2x.png */; };
+		8AC171F3185D854800F6DCC8 /* alarm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AC171EE185D854700F6DCC8 /* alarm@2x.png */; };
+		8AC171F4185D854800F6DCC8 /* exit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AC171EF185D854700F6DCC8 /* exit@2x.png */; };
+		8AC171F5185D854800F6DCC8 /* logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AC171F0185D854700F6DCC8 /* logout@2x.png */; };
+		8AC171F6185D854800F6DCC8 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AC171F1185D854700F6DCC8 /* menu@2x.png */; };
+		8AC171F7185D854800F6DCC8 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AC171F2185D854700F6DCC8 /* settings@2x.png */; };
 		F313CE16D2C348418692B4E7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16606FD3C2644F87858BB6CD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -68,9 +69,6 @@
 		8A2DCA38185C5F6E00746730 /* SideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuViewController.m; sourceTree = "<group>"; };
 		8A2DCA39185C5F6E00746730 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		8A2DCA3A185C5F6E00746730 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		8A2DCA42185C610200746730 /* alarm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alarm@2x.png"; sourceTree = "<group>"; };
-		8A2DCA44185C610200746730 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
-		8A2DCA48185C618000746730 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
 		8A986503185C542900446A01 /* snoozeforgood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snoozeforgood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A986506185C542900446A01 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8A986508185C542900446A01 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -86,7 +84,11 @@
 		8A98652D185C542A00446A01 /* snoozeforgoodTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "snoozeforgoodTests-Info.plist"; sourceTree = "<group>"; };
 		8A98652F185C542A00446A01 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8A986531185C542A00446A01 /* snoozeforgoodTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = snoozeforgoodTests.m; sourceTree = "<group>"; };
-		8AC171EC185D08AF00F6DCC8 /* logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout@2x.png"; sourceTree = "<group>"; };
+		8AC171EE185D854700F6DCC8 /* alarm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alarm@2x.png"; sourceTree = "<group>"; };
+		8AC171EF185D854700F6DCC8 /* exit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exit@2x.png"; sourceTree = "<group>"; };
+		8AC171F0185D854700F6DCC8 /* logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout@2x.png"; sourceTree = "<group>"; };
+		8AC171F1185D854700F6DCC8 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
+		8AC171F2185D854700F6DCC8 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 		96901938C96649A795AD687E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,10 +155,11 @@
 		8A2DCA41185C610200746730 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				8AC171EC185D08AF00F6DCC8 /* logout@2x.png */,
-				8A2DCA48185C618000746730 /* menu@2x.png */,
-				8A2DCA42185C610200746730 /* alarm@2x.png */,
-				8A2DCA44185C610200746730 /* settings@2x.png */,
+				8AC171EE185D854700F6DCC8 /* alarm@2x.png */,
+				8AC171EF185D854700F6DCC8 /* exit@2x.png */,
+				8AC171F0185D854700F6DCC8 /* logout@2x.png */,
+				8AC171F1185D854700F6DCC8 /* menu@2x.png */,
+				8AC171F2185D854700F6DCC8 /* settings@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -313,12 +316,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A98651F185C542A00446A01 /* Images.xcassets in Resources */,
-				8AC171ED185D08AF00F6DCC8 /* logout@2x.png in Resources */,
-				8A2DCA49185C618000746730 /* menu@2x.png in Resources */,
-				8A2DCA47185C610200746730 /* settings@2x.png in Resources */,
+				8AC171F6185D854800F6DCC8 /* menu@2x.png in Resources */,
 				8A986511185C542A00446A01 /* InfoPlist.strings in Resources */,
-				8A2DCA45185C610200746730 /* alarm@2x.png in Resources */,
+				8AC171F5185D854800F6DCC8 /* logout@2x.png in Resources */,
+				8AC171F3185D854800F6DCC8 /* alarm@2x.png in Resources */,
+				8AC171F7185D854800F6DCC8 /* settings@2x.png in Resources */,
 				8A98651A185C542A00446A01 /* Main.storyboard in Resources */,
+				8AC171F4185D854800F6DCC8 /* exit@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
