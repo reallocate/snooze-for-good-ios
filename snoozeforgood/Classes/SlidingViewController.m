@@ -12,6 +12,7 @@
 
 @implementation SlidingViewController {
 
+    SigninViewController* _signinViewController;
 }
 
 
@@ -33,11 +34,15 @@
     }];
 }
 
-- (void) toSigninView {
-    [self resetTopViewAnimated:YES onComplete:nil];
-    SigninViewController *signinViewController = [[AppDelegate get].mainStoryboard instantiateViewControllerWithIdentifier:@"Signin"];
-    [self presentViewController:signinViewController animated:NO completion:nil];
+- (void)toSigninView {
+    [self resetTopViewAnimated:NO onComplete:^{
+        _signinViewController = [[AppDelegate get].mainStoryboard instantiateViewControllerWithIdentifier:@"Signin"];
+        [self presentViewController:_signinViewController animated:NO completion:nil];
+    }];
 }
 
-
+- (void)dismissSigninView {
+    [_signinViewController dismiss];
+    _signinViewController = nil;
+}
 @end

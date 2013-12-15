@@ -5,16 +5,17 @@
 
 
 #import "SigninViewController.h"
+#import "UserManager.h"
 
 
 @implementation SigninViewController {
-
+    IBOutlet FBLoginView *_fbLoginView;
 }
 
-- (IBAction)facebookButtonPushed:(id)sender {
-    [self dismiss];
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    _fbLoginView.delegate = [UserManager sharedInstance];
 }
-
 
 - (IBAction)emailButtonPushed:(id)sender {
     [self dismiss];
@@ -24,6 +25,5 @@
     self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;   // your choice here from UIModalTransitionStyle
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
-
 
 @end

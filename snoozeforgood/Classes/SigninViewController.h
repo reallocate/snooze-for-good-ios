@@ -5,7 +5,9 @@
 
 
 #import <Foundation/Foundation.h>
+#import "FBLoginView.h"
 
 
 @interface SigninViewController : UIViewController
+- (void)dismiss;
 @end

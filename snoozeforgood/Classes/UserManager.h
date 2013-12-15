@@ -6,10 +6,11 @@
 
 #import <Foundation/Foundation.h>
 #import "ObjCSingleton.h"
+#import "FBLoginView.h"
 
 
-@interface UserManager : ObjCSingleton
-@property(nonatomic, readonly) BOOL isLoggedIn;
+@interface UserManager : ObjCSingleton<FBLoginViewDelegate>
+@property(nonatomic) BOOL isLoggedIn;
 
 - (void)signout;
 @end
