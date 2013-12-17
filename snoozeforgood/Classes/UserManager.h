@@ -10,7 +10,7 @@
 
 
 @interface UserManager : ObjCSingleton
-@property(nonatomic) BOOL isLoggedIn;
+@property(nonatomic, readonly) BOOL isLoggedIn;
 
 - (void)signout;
 

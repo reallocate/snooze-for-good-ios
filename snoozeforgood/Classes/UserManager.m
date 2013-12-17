@@ -10,13 +10,13 @@
 #import "FBErrorUtility.h"
 #import "AppDelegate.h"
 #import "SlidingViewController.h"
-
+#import "FBRequest.h"
 
 
 @implementation UserManager {
 }
 - (BOOL)isLoggedIn {
-    return NO;
+    return FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded;
 }
 
 - (void)signout {
@@ -25,33 +25,29 @@
 
 
 - (void)openFaceBookSession {
-    if (FBSession.activeSession.isOpen) {
-        // if a user logs out explicitly, we delete any cached token information, and next
-        // time they run the applicaiton they will be presented with log in UX again; most
-        // users will simply close the app or switch away, without logging out; this will
-        // cause the implicit cached-token login to occur on next launch of the application
-        [FBSession.activeSession closeAndClearTokenInformation];
+    NSArray *permissions = [[NSArray alloc] initWithObjects:@"email", nil];
+    [FBSession openActiveSessionWithReadPermissions:permissions allowLoginUI:YES completionHandler:
+            ^(FBSession *session, FBSessionState state, NSError *error) {
+                if (error) {
+                    [self handleError:error];
+                    [self signout];
+                    [[AppDelegate get].slidingViewController toSignupView];
+                } else {
+                    [self grabUserInfoWithCompletionHandler:^(NSDictionary <FBGraphUser> *user, NSError *error) {
+                        [[AppDelegate get].slidingViewController dismissSignupView];
+                    }];
+                }
+            }];
 
-    } else {
-        if (FBSession.activeSession.state != FBSessionStateCreated) {
-            // Create a new, logged out session.
-            [FBSession setActiveSession:[[FBSession alloc] init]];
-        }
+}
 
-        // if the session isn't open, let's open it now and present the login UX to the user
-        [FBSession.activeSession openWithCompletionHandler:^(FBSession *session,
-                FBSessionState status,
-                NSError *error) {
-            if (error) {
-                [self handleError:error];
-                [self signout];
-                [[AppDelegate get].slidingViewController toSignupView];
-            } else {
-                [self setIsLoggedIn:YES];
-                [[AppDelegate get].slidingViewController dismissSignupView];
-            }
-        }];
-    }
+- (void)grabUserInfoWithCompletionHandler:(void (^)(id, NSError *))completionHandler {
+    [[FBRequest requestForMe] startWithCompletionHandler:^(FBRequestConnection *connection,
+            NSDictionary <FBGraphUser> *user,
+            NSError *error) {
+        completionHandler(user, error);
+    }];
+
 }
 
 - (void)handleError:(NSError *)error {
@@ -82,7 +78,7 @@
     } else {
         // For simplicity, this sample treats other errors blindly, but you should
         // refer to https://developers.facebook.com/docs/technical-guides/iossdk/errors/ for more information.
-        alertTitle  = @"Unknown Error";
+        alertTitle = @"Unknown Error";
         alertMessage = @"Error. Please try again later.";
         NSLog(@"Unexpected error:%@", error);
     }
