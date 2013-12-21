@@ -11,9 +11,10 @@
 #import "SlidingViewController.h"
 #import "UserManager.h"
 #import "SigninViewController.h"
+#import "User.h"
+#import <Parse/Parse.h>"
+#import <Parse/PFFacebookUtils.h>
 #import "FBAppCall.h"
-#import "FBAppEvents.h"
-#import "FBSessionTokenCachingStrategy.h"
 
 @implementation AppDelegate {
     //ECSlidingViewController *_slidingViewController;
@@ -25,17 +26,6 @@
 
     // Nib files require the type to have been loaded before they can do the wireup successfully.
     // http://stackoverflow.com/questions/1725881/unknown-class-myclass-in-interface-builder-file-error-at-runtime
-    [FBLoginView class];
-
-    // Facebook SDK * pro-tip *
-    // We take advantage of the `FBLoginView` in our loginViewController, which can
-    // automatically open a session if there is a token cached. If we were not using
-    // that control, this location would be a good place to try to open a session
-    // from a token cache.
-
-
-
-
 
     UIViewController *topViewController = [self.mainStoryboard instantiateViewControllerWithIdentifier:@"Alarm"];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:topViewController];
@@ -58,11 +48,15 @@
 
     [self.window makeKeyAndVisible];
 
+    // parse setting
+    [User registerSubclass];
+    [Parse setApplicationId:@"S7UVunXXmGj08x7Bk4BbcqxFRAsrghjpwkO4V2Y0" clientKey:@"Ano4pG7kTkzE2BiKt04ATusHk3cX8Q5ONHXxiWvu"];
+    [PFFacebookUtils initializeFacebook];
+
 
     if (![[UserManager sharedInstance] isLoggedIn]) {
         [_slidingViewController toSignupView];
     }
-
 
     return YES;
 
@@ -88,12 +82,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    [FBAppEvents activateApp];
-
-    // Facebook SDK * login flow *
-    // We need to properly handle activation of the application with regards to SSO
-    //  (e.g., returning from iOS 6.0 authorization dialog or from fast app switching).
-    [FBAppCall handleDidBecomeActive];
+    [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -104,7 +93,6 @@
     // other components in the app may be awaiting close notification in order to do cleanup
 
     UserManager *userManager = [UserManager sharedInstance];
-    [FBSession.activeSession close];
 }
 
 - (UIStoryboard *)mainStoryboard {
@@ -117,27 +105,13 @@
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
 
-    // Facebook SDK * login flow *
-    // Attempt to handle URLs to complete any auth (e.g., SSO) flow.
-    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication fallbackHandler:^(FBAppCall *call) {
-        // Facebook SDK * App Linking *
-        // For simplicity, this sample will ignore the link if the session is already
-        // open but a more advanced app could support features like user switching.
-        if (call.accessTokenData) {
-            if ([FBSession activeSession].isOpen) {
-                NSLog(@"INFO: Ignoring app link because current session is open.");
-            }
-            else {
-                [self handleAppLink:call.accessTokenData];
-            }
-        }
-    }];
+    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication withSession:[PFFacebookUtils session]];
 }
 
 // Helper method to wrap logic for handling app links.
 - (void)handleAppLink:(FBAccessTokenData *)appLinkToken {
     // Initialize a new blank session instance...
-    FBSession *appLinkSession = [[FBSession alloc] initWithAppID:nil
+   /* FBSession *appLinkSession = [[FBSession alloc] initWithAppID:nil
                                                      permissions:nil
                                                  defaultAudience:FBSessionDefaultAudienceNone
                                                  urlSchemeSuffix:nil
@@ -151,6 +125,7 @@
                                   [[UserManager sharedInstance] handleError:error];
                               }
                           }];
+                          */
 }
 
 @end

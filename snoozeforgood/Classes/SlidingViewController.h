@@ -6,7 +6,6 @@
 
 #import <Foundation/Foundation.h>
 #import "ECSlidingViewController.h"
-#import "FBLoginView.h"
 
 @interface SlidingViewController : ECSlidingViewController
 

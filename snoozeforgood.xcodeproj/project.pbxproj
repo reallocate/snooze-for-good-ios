@@ -11,6 +11,7 @@
 		37AE4417C552AE087B982A46 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AE4FA3B2A893A82C3347D0 /* SignupViewController.m */; };
 		37AE4452E65CC2A8971D8323 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AE437EE79B197FE4E63E0C /* UserManager.m */; };
 		37AE49ECA1E4258C7FD1466A /* ObjCSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AE41F186F6B9FA31DFDB3D /* ObjCSingleton.m */; };
+		37AE4CE7553642879D0787B7 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AE4DB335090D57EAB437E5 /* User.m */; };
 		37AE4DBB7D232C92911E514E /* SigninViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AE4C422AE6FCB08798D66A /* SigninViewController.m */; };
 		8A2DCA3C185C5F6E00746730 /* AlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2DCA32185C5F6E00746730 /* AlarmViewController.m */; };
 		8A2DCA3D185C5F6E00746730 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2DCA34185C5F6E00746730 /* AppDelegate.m */; };
@@ -55,7 +56,9 @@
 		37AE49E7E512B5824B4626A8 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
 		37AE4A375C0AA5FFA05CC261 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		37AE4BF68F1027D5C15A154E /* SigninViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SigninViewController.h; sourceTree = "<group>"; };
+		37AE4C39F272F9DC12688FDC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		37AE4C422AE6FCB08798D66A /* SigninViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SigninViewController.m; sourceTree = "<group>"; };
+		37AE4DB335090D57EAB437E5 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		37AE4E157171C131960EE1C2 /* SlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlidingViewController.h; sourceTree = "<group>"; };
 		37AE4EF671FFD4376555C054 /* ObjCSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjCSingleton.h; sourceTree = "<group>"; };
 		37AE4FA3B2A893A82C3347D0 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
@@ -140,6 +143,8 @@
 				37AE4BF68F1027D5C15A154E /* SigninViewController.h */,
 				37AE4FA3B2A893A82C3347D0 /* SignupViewController.m */,
 				37AE4A375C0AA5FFA05CC261 /* SignupViewController.h */,
+				37AE4DB335090D57EAB437E5 /* User.m */,
+				37AE4C39F272F9DC12688FDC /* User.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -385,6 +390,7 @@
 				37AE49ECA1E4258C7FD1466A /* ObjCSingleton.m in Sources */,
 				37AE4DBB7D232C92911E514E /* SigninViewController.m in Sources */,
 				37AE4417C552AE087B982A46 /* SignupViewController.m in Sources */,
+				37AE4CE7553642879D0787B7 /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

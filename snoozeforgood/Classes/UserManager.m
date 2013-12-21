@@ -5,49 +5,64 @@
 
 
 #import "UserManager.h"
-#import "FBSession.h"
-#import "FBError.h"
-#import "FBErrorUtility.h"
 #import "AppDelegate.h"
 #import "SlidingViewController.h"
+#import <Parse/PFUser.h>
+#import <Parse/PFFacebookUtils.h>
 #import "FBRequest.h"
+#import "FBError.h"
+#import "FBErrorUtility.h"
+#import "User.h"
+#import "SVProgressHUD.h"
 
 
 @implementation UserManager {
 }
 - (BOOL)isLoggedIn {
-    return FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded;
+    return nil != [User currentUser];
 }
 
 - (void)signout {
-    [FBSession.activeSession closeAndClearTokenInformation];
+    [[PFFacebookUtils session] closeAndClearTokenInformation];
 }
 
 
 - (void)openFaceBookSession {
     NSArray *permissions = [[NSArray alloc] initWithObjects:@"email", nil];
-    [FBSession openActiveSessionWithReadPermissions:permissions allowLoginUI:YES completionHandler:
-            ^(FBSession *session, FBSessionState state, NSError *error) {
-                if (error) {
-                    [self handleError:error];
-                    [self signout];
-                    [[AppDelegate get].slidingViewController toSignupView];
-                } else {
-                    [self grabUserInfoWithCompletionHandler:^(NSDictionary <FBGraphUser> *user, NSError *error) {
+
+    [PFFacebookUtils logInWithPermissions:permissions block:^(PFUser *pfUser, NSError *error) {
+        if (error) {
+            NSLog(@"openFaceBookSession: %@", error);
+            [self handleError:error];
+            [self signout];
+            [[AppDelegate get].slidingViewController toSignupView];
+        } else {
+            [SVProgressHUD show];
+            [[FBRequest requestForMe] startWithCompletionHandler:^(FBRequestConnection *connection,
+                    FBGraphObject *fbUser,
+                    NSError *fbError) {
+                        User* user = (User *) pfUser;
+                        user.email = [fbUser objectForKey:@"email"];
+                        user.firstName = [fbUser objectForKey:@"first_name"];
+                        user.middleName = [fbUser objectForKey:@"middle_name"];
+                        user.lastName = [fbUser objectForKey:@"last_name"];
+                        [user saveInBackground];
+
+                if (![PFFacebookUtils isLinkedWithUser:pfUser]) {
+                    [PFFacebookUtils linkUser:user permissions:nil block:^(BOOL succeeded, NSError *linkingError) {
+                        if (!succeeded) {
+                            NSLog(@"openFaceBookSession: %@", linkingError);
+                        }
                         [[AppDelegate get].slidingViewController dismissSignupView];
+                        [SVProgressHUD dismiss];
                     }];
+                } else {
+                    [[AppDelegate get].slidingViewController dismissSignupView];
+                    [SVProgressHUD dismiss];
                 }
             }];
-
-}
-
-- (void)grabUserInfoWithCompletionHandler:(void (^)(id, NSError *))completionHandler {
-    [[FBRequest requestForMe] startWithCompletionHandler:^(FBRequestConnection *connection,
-            NSDictionary <FBGraphUser> *user,
-            NSError *error) {
-        completionHandler(user, error);
+        }
     }];
-
 }
 
 - (void)handleError:(NSError *)error {
